@@ -23,12 +23,8 @@ public class AttendanceService {
         return attendanceRepository.findById(id);
     } 
     
-    public Attendance saveAttendance(Long id, Attendance updatedAttendance){
-        if(attendanceRepository.existsById(id)) {
-            updatedAttendance.setAttendanceId(id);
-            return attendanceRepository.save(UpdatedAttendance);
-        }
-        return null;
+    public Attendance saveAttendance(Attendance attendance){
+        return attendanceRepository.save(attendance);
     }
 
     public void deleteAttendance(Long id) {
